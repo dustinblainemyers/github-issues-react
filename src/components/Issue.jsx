@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collection , CollectionItem, Card } from 'react-materialize';
+import { Card , Col} from 'react-materialize';
 
 const Issue = (props) => {
 
@@ -9,7 +9,10 @@ const Issue = (props) => {
             // <h3><a href={props.issue.html_url}>{props.issue.title}</a></h3>
             // <h3>{props.issue.body}</h3>
             // <p>{props.issue.body}</p>
-
+            <Col
+            m={3}
+            s={3}
+          >
      <Card
       actions={[
         <a  href={props.issue.html_url}>More Info </a>,
@@ -22,7 +25,7 @@ const Issue = (props) => {
     >
      {props.issue.body}
     </Card>
-        
+     </Col>   
 
     )
 

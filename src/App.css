@@ -38,8 +38,8 @@
 }
 
 .card-content {
-
+  position: relative;
   overflow: hidden;
-  max-height: 10%;
-  max-width: 300px;
+  
+
 }
