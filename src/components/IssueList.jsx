@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Issue from './Issue'
 
 class IssueList extends Component {
     constructor(props) {
@@ -12,11 +13,11 @@ class IssueList extends Component {
         fetch("https://api.github.com/repos/facebook/create-react-app/issues")
             .then(res => res.json())
             .then((result) => {
-                console.log(result[0])
+
                 this.setState({
                     issues: result
                 });
-                console.log(this.state);
+
             });
 
     }
@@ -28,9 +29,7 @@ class IssueList extends Component {
 
                     {issues.length > 0 ? (
                         issues.map(issue => (
-                            <li key={issue.id}>
-                                <Issue title={title} />
-                            </li>
+                            <Issue issue={issue} key={issue.id} />
                         ))
                     ) : (
                             <li>No Data</li>
