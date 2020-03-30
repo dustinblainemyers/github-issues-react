@@ -3,16 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import IssueList from './components/IssueList'
 
+
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
-        <IssueList>
-          <Issue
-            title={issue.title}
-          />
-        </IssueList>
+        <IssueList />
       </header>
     </div>
   );

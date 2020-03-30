@@ -1,10 +1,17 @@
 import React from 'react';
 import IssueList from './IssueList'
 
-Issue = (props) => {
-    const { title } = this.props
+const Issue = (props) => {
 
+    console.log(props)
     return (
-        <h1>{props.children}</h1>
+        <li>
+            <h3><a href={props.issue.html_url}>{props.issue.title}</a></h3>
+
+        </li>
+
     )
+
 }
+
+export default Issue;
