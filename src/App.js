@@ -4,12 +4,15 @@ import './App.css';
 import IssueList from './components/IssueList'
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        Blah
-      <IssueList />
+        <IssueList>
+          <Issue
+            title={issue.title}
+          />
+        </IssueList>
       </header>
     </div>
   );

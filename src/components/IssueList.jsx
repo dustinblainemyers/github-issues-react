@@ -5,7 +5,6 @@ class IssueList extends Component {
         super(props);
         this.state = {
             issues: [],
-            isLoaded: false
         };
     }
 
@@ -15,7 +14,6 @@ class IssueList extends Component {
             .then((result) => {
                 console.log(result[0])
                 this.setState({
-                    isLoaded: true,
                     issues: result
                 });
                 console.log(this.state);
@@ -23,27 +21,27 @@ class IssueList extends Component {
 
     }
     render() {
-        const { isLoaded, issues } = this.state;
-
+        const { issues } = this.state;
         return (
             <div>
                 <ul>
 
                     {issues.length > 0 ? (
                         issues.map(issue => (
-                            <li key={issue.name}>
+                            <li key={issue.id}>
                                 {issue.title}
                             </li>
                         ))
                     ) : (
                             <li>No Data</li>
                         )
-                    })}
+                    }
                 </ul>
             </div>
         )
     }
 }
+
 
 
 export default IssueList;
