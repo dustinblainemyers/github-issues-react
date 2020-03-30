@@ -29,7 +29,7 @@ class IssueList extends Component {
                     {issues.length > 0 ? (
                         issues.map(issue => (
                             <li key={issue.id}>
-                                {issue.title}
+                                <Issue title={title} />
                             </li>
                         ))
                     ) : (
