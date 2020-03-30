@@ -13,9 +13,10 @@ class IssueList extends Component {
         fetch("https://api.github.com/repos/facebook/create-react-app/issues")
             .then(res => res.json())
             .then((result) => {
+                console.log(result[0])
                 this.setState({
                     isLoaded: true,
-                    issues: result.issues
+                    issues: result
                 });
                 console.log(this.state);
             });
@@ -23,25 +24,26 @@ class IssueList extends Component {
     }
     render() {
         const { isLoaded, issues } = this.state;
-        if (!!isLoaded) {
-            return <div>Loading...</div>
-        }
-        else {
-            return (
-                <div>
-                    <ul>
-                        {
-                            issues.map(issue => (
-                                <li key={issue.name}>
-                                    {issue.title}
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            )
-        }
+
+        return (
+            <div>
+                <ul>
+
+                    {issues.length > 0 ? (
+                        issues.map(issue => (
+                            <li key={issue.name}>
+                                {issue.title}
+                            </li>
+                        ))
+                    ) : (
+                            <li>No Data</li>
+                        )
+                    })}
+                </ul>
+            </div>
+        )
     }
 }
+
 
 export default IssueList;
