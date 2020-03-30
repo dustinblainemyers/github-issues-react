@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Issue from './Issue'
+import { Collection , CollectionItem } from 'react-materialize';
 
 class IssueList extends Component {
     constructor(props) {
@@ -25,17 +26,19 @@ class IssueList extends Component {
         const { issues } = this.state;
         return (
             <div>
-                <ul>
+               
 
                     {issues.length > 0 ? (
                         issues.map(issue => (
+                            
                             <Issue issue={issue} key={issue.id} />
+                           
                         ))
                     ) : (
                             <li>No Data</li>
                         )
                     }
-                </ul>
+               
             </div>
         )
     }
