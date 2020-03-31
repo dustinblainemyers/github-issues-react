@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Issue from './IssueDetail'
-import { Collection , CollectionItem,Row, Col } from 'react-materialize';
+import { Collection , CollectionItem,Row, Col, Card } from 'react-materialize';
 
 class IssueList extends Component {
     constructor(props) {
@@ -24,6 +24,7 @@ class IssueList extends Component {
     }
     render() {
         const { issues } = this.state;
+        
         return (
             <div>
                
@@ -32,8 +33,20 @@ class IssueList extends Component {
                     {issues.length > 0 ? (
                         issues.map(issue => (
                             
-                            <Issue issue={issue} key={issue.id} />
-                           
+                            <Row>
+                                  <Card
+                                    actions={[
+                                        <a  href={issue.html_url}>View Issue Detail </a>,
+                                        
+                                    ]}
+                                    className="blue-grey darken-1"
+                                    
+                                    textClassName="white-text"
+                                    title={issue.title}
+                                    >
+                                   
+                                  </Card>
+                            </Row>
                         ))
                     ) : (
                             <li>No Data</li>

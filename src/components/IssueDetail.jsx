@@ -1,32 +1,16 @@
-import React from 'react';
-import { Row, Card} from 'react-materialize';
+import React, { Component } from 'react'
 
-const Issue = (props) => {
 
-    console.log(props)
+export class IssueDetail extends Component {
+  
+
+  render() {
     return (
+      <div>
         
-            // <h3><a href={props.issue.html_url}>{props.issue.title}</a></h3>
-            // <h3>{props.issue.body}</h3>
-            // <p>{props.issue.body}</p>
-      <Row>        
-     <Card
-      actions={[
-        
-        
-      ]}
-      className="blue-grey darken-1"
-      
-      textClassName="white-text"
-      title={props.issue.title}
-    >
-     {props.issue.body}
-    </Card>
-    </Row>
-      
-
+      </div>
     )
-
+  }
 }
 
-export default Issue;
+export default IssueDetail
