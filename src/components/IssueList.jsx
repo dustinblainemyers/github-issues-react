@@ -24,7 +24,8 @@ class IssueList extends Component {
     }
     render() {
         const { issues } = this.state;
-        
+        const link = "/issue/" 
+        console.log('issue number', issues.number)
         return (
             <div>
                
@@ -34,9 +35,9 @@ class IssueList extends Component {
                         issues.map(issue => (
                             
                             <Row>
-                                  <Card
+                                  <Card 
                                     actions={[
-                                        <a  href={issue.html_url}>View Issue Detail </a>,
+                                        <a  href={link + issue.number} > test</a>,
                                         
                                     ]}
                                     className="blue-grey darken-1"
