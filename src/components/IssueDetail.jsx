@@ -35,26 +35,27 @@ export class IssueDetail extends Component {
     const { issues } = this.state;
      console.log('issues',issues)
     return (
-      <div>
+      
          
-                      <Row>
+                      <Row className="issueDetailRow">
                             <Card
                               actions={[
-                                  <a  href={issues.html_url}>View Issue Detail </a>,
+                                  <a  href={issues.html_url}>View On Github </a>,
                                   
                               ]}
-                              className="blue-grey darken-1"
+                              className="blue-grey darken-1 "
                               
                               textClassName="white-text"
+
                               title={issues.title}
-                              >
+                              > {issues.body}
                              
                             </Card>
                       </Row>
                
           
 
-      </div>
+      
   )
 
   }

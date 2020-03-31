@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Issue from './IssueDetail'
-import { Collection , CollectionItem,Row, Col, Card } from 'react-materialize';
+import { Row,  Card } from 'react-materialize';
 
 class IssueList extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class IssueList extends Component {
                 this.setState({
                     issues: result
                 });
+               
 
             });
 
