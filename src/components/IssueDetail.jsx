@@ -9,15 +9,16 @@ export class IssueDetail extends Component {
        this.state = {
            issues: [],
        };
+       this.props = props;
    }
 
    
 
   componentDidMount() {
-
-  const {number} = this.props;
-
-  fetch(`https://api.github.com/repos/facebook/create-react-app/issues/${number}`)
+  
+  const {issue_number} = this.props.match.params;
+  console.log('issue',this.props)
+  fetch(`https://api.github.com/repos/facebook/create-react-app/issues/${issue_number}`)
       .then(res => res.json())
       .then((result) => {
 
@@ -32,34 +33,25 @@ export class IssueDetail extends Component {
   render() {
 
     const { issues } = this.state;
-
+     console.log('issues',issues)
     return (
       <div>
          
-
-
-              {issues.length > 0 ? (
-                  issues.map(issue => (
-                      
                       <Row>
                             <Card
                               actions={[
-                                  <a  href={issue.html_url}>View Issue Detail </a>,
+                                  <a  href={issues.html_url}>View Issue Detail </a>,
                                   
                               ]}
                               className="blue-grey darken-1"
                               
                               textClassName="white-text"
-                              title={issue.title}
+                              title={issues.title}
                               >
                              
                             </Card>
                       </Row>
-                  ))
-              ) : (
-                      <li>No Data</li>
-                  )
-              }
+               
           
 
       </div>
