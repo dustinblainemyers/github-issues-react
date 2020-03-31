@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Issue from './Issue'
+import Issue from './IssueDetail'
 import { Collection , CollectionItem,Row, Col } from 'react-materialize';
 
 class IssueList extends Component {
@@ -26,7 +26,7 @@ class IssueList extends Component {
         const { issues } = this.state;
         return (
             <div>
-               <Row>
+               
   
 
                     {issues.length > 0 ? (
@@ -40,7 +40,7 @@ class IssueList extends Component {
                         )
                     }
                 
-</Row>
+
             </div>
         )
     }
